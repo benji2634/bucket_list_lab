@@ -56,17 +56,17 @@ var getMap = function(country) {
   mainMap.addMarker(location);
 }
 
-var saveCountry = function(countryName) {
+var saveCountry = function(country) {
   var url = "http://localhost:3000/countries";
   var request = new XMLHttpRequest();
   request.open("POST", url);
   request.setRequestHeader("Content-Type", "application/json");
   request.onload = function() {
     if (request.status === 200) {
-      console.log(countryName);
+      console.log(country);
     }
   }
-  request.send(JSON.stringify(countryName));
+  request.send(JSON.stringify(country));
 }
 
 window.onload = app;
